@@ -16,7 +16,7 @@ import org.springframework.web.client.RestClientException;
 /**
  * The View controller.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 @Controller
 public class HomeController {

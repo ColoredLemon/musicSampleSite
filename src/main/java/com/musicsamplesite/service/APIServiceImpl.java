@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * The type Search service.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 @Service("apiService")
 public class APIServiceImpl implements APIService {

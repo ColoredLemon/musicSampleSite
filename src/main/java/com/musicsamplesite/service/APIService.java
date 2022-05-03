@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * The interface Search service.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 public interface APIService {
 
