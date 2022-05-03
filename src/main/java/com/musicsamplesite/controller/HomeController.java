@@ -63,7 +63,7 @@ public class HomeController {
     }
     @GetMapping("/Login")
     public String Signup() {
-        return "Login";
+        return "login";
     }
 
     @GetMapping("/index")
