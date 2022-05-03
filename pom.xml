@@ -99,11 +99,4 @@
             </plugin>
         </plugins>
     </build>
-    <developers>
-        <developer>
-            <name>Harry Dulaney</name>
-            <id>HGDIV</id>
-            <email>harrydulaney.com</email>
-        </developer>
-    </developers>
 </project>
