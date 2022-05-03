@@ -7,7 +7,7 @@ import java.net.URLEncoder;
 /**
  * The type Url utils.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 public class UrlUtils {
     private static final String BASE_URL_ARTIST = "https://api.deezer.com/artist/";

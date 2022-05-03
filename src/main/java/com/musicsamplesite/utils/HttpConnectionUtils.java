@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 /**
  * The type Http connection utils.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 @Component
 public class HttpConnectionUtils implements IHttpConnection{

@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * The type Simh rest template.
  *
- * @author HGDIV
+ * @author Yuepeng
  */
 @Component
 public class SIMHRestTemplate {
