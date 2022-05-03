@@ -5,8 +5,6 @@ import java.util.Objects;
 
 /**
  * The type Artist.
- *
- * @author HGDIV
  */
 public class Artist {
 

@@ -1,22 +1,20 @@
 package com.musicsamplesite.controller;
 
-import com.musicsamplesite.model.*;
 import com.musicsamplesite.model.Artists;
 import com.musicsamplesite.model.Search;
-import com.musicsamplesite.service.APIService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestClientException;
 
 /**
  * The View controller.
- *
- * @author Yuepeng
  */
 @Controller
 public class HomeController {
@@ -42,7 +40,7 @@ public class HomeController {
      * @param APIService the search service
      */
     @Autowired
-    public HomeController(APIService APIService) {
+    public HomeController(com.musicsamplesite.service.APIService APIService) {
         this.APIService = APIService;
     }
 
@@ -57,26 +55,22 @@ public class HomeController {
      * @param model the model
      * @return the string
      */
-    @GetMapping("/")
-    public String index(Model model) {
+    @GetMapping("/Browse")
+    public String Browse(Model model) {
         model.addAttribute("initialized", false);
         model.addAttribute("search", new Search());
+        return "Browse";
+    }
+    @GetMapping("/Login")
+    public String Signup() {
+        return "Login";
+    }
+
+    @GetMapping("/index")
+    public String index() {
         return "index";
     }
 
-
-    /**
-     * Index string.
-     *
-     * @param model the model
-     * @return the string
-     */
-    @GetMapping("/signUp")
-    public String index2(Model model) {
-        model.addAttribute("initialized", false);
-        model.addAttribute("search", new Search());
-        return "login";
-    }
 
     /**
      * Artist view string.
@@ -87,7 +81,7 @@ public class HomeController {
     @GetMapping("/artists")
     public String artistSearchResults(Model model) {
         model.addAttribute("search", new Search());
-        return "index";
+        return "Browse";
     }
 
     /**
@@ -114,7 +108,7 @@ public class HomeController {
         model.addAttribute("artists", artistsList);
         model.addAttribute("initialized", true);
         model.addAttribute("search", search);
-        return "index";
+        return "Browse";
     }
 
     private Artists searchArtist(Search search) throws Exception {

@@ -6,6 +6,16 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css} "/>
     <link rel="stylesheet" href="/style/main.css"/>
 
+    <style th:inline="text">
+        body{
+            background: url([[@{/img/bg-img/20.jpeg}]])
+            no-repeat center center fixed;
+            background-size: 100%;
+            width:  auto;
+            background-position: center;
+        }
+    </style>
+
     <title th:text="${title}"></title>
 </head>
 <body>

@@ -1,13 +1,12 @@
 package com.musicsamplesite.service;
 
-import com.musicsamplesite.model.*;
+import com.musicsamplesite.model.Album;
+import com.musicsamplesite.model.Albums;
 import com.musicsamplesite.model.Artists;
+import com.musicsamplesite.model.Track;
 import com.musicsamplesite.utils.HttpConnectionUtils;
 import com.musicsamplesite.utils.SIMHRestTemplate;
 import com.musicsamplesite.utils.UrlUtils;
-import com.musicsamplesite.model.Album;
-import com.musicsamplesite.model.Albums;
-import com.musicsamplesite.model.Track;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ import java.util.List;
 
 /**
  * The type Search service.
- *
- * @author Yuepeng
  */
 @Service("apiService")
 public class APIServiceImpl implements APIService {

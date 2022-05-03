@@ -2,7 +2,6 @@ package com.musicsamplesite.controller;
 
 import com.musicsamplesite.model.Album;
 import com.musicsamplesite.model.Albums;
-import com.musicsamplesite.service.APIService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class AlbumController {
     public String title;
 
     @Autowired
-    public AlbumController(APIService APIService) {
+    public AlbumController(com.musicsamplesite.service.APIService APIService) {
         this.APIService = APIService;
 
     }

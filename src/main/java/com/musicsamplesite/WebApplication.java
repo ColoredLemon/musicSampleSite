@@ -7,8 +7,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * The type Web application.
- *
- * @author HGDIV
  */
 @SpringBootApplication
 public class WebApplication {

@@ -6,8 +6,6 @@ import java.util.Date;
 
 /**
  * The type Track.
- *
- * @author Yuepeng
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Track {

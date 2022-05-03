@@ -15,11 +15,9 @@ import java.io.InputStreamReader;
 
 /**
  * The type Http connection utils.
- *
- * @author Yuepeng
  */
 @Component
-public class HttpConnectionUtils implements IHttpConnection{
+public class HttpConnectionUtils implements IHttpConnection {
 
     /**
      * The Log.

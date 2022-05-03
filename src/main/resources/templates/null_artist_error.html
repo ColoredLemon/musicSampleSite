@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="style/main.css"/>
     <title>Error</title>
 
+    <style th:inline="text">
+        body{
+            background: url([[@{/img/bg-img/20.jpeg}]])
+            no-repeat center center fixed;
+            background-size: 100%;
+            width:  auto;
+            background-position: center;
+        }
+    </style>
+
 </head>
 <body>
 <nav th:replace="fragments/navigation.html :: nav-all-links "></nav>

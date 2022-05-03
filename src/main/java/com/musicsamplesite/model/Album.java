@@ -7,8 +7,6 @@ import java.util.Objects;
 
 /**
  * The type Album.
- *
- * @author Yuepeng
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Album {

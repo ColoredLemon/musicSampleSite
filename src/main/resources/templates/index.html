@@ -4,30 +4,65 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css} "/>
-    <link rel="stylesheet" href="/style/main.css"/>
+    <link rel="stylesheet" href="/static/style/main.css"/>
 
-    <title th:text="${title}"></title>
+
+    <title> Music Sharing Website </title>
 </head>
+
+
 <body>
 <nav th:replace="fragments/navigation.html :: nav-all-links "></nav>
 <br>
-<div class="container" th:align="center">
-<h2 th:insert="fragments/navigation.html :: ${initialized} ? 'h2-banner-2': 'h2-banner' "></h2>
-    <hr>
-        <form class="form-group" action="#" th:align="center" th:action="@{/searchForm}" th:object="${search}" th:method="post">
-           <label th:align="center" for="name">Enter Artist Here:</label>
-            <input type="search" th:field="*{userInput}" style="margin-bottom: 2vh;" name="name" id="name" required>
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
 
-    <hr>
-        <hr>
-        <h2 class="text-black-50 bg-secondary" th:align="center" th:if="${initialized}">Search Results</h2>
-        <h4 th:align="center" class="text-dark text-md-center"></h4>
-    <div class="table-responsive" style="max-width: 100%;">
-    <table th:replace="fragments/tables :: ${initialized} ? 'artist-table' : 'blank-table'"></table>
-    </div>
-    </div>
+
+
+<!-- ***** Featured Artist Area Start ***** -->
+<section class="Most-Popular-Artists">
+    <div class="container">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h5>Most Popular Artists</h5>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-around">
+            <!-- Single Featured Artist -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="Most-Popular-Artists mb-80">
+                    <img th:src="@{/img/bg-img/3.jpg}" width="300" height="300" style="border: 5px Solid black;"/>&emsp;&emsp;
+                    <div class="Artist-info">
+                        <p style="padding: 10px; background: White; border: 2px Solid black; text-align: center;">Post Malone&emsp;&emsp;Albums:23</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Featured Artist -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="Most-Popular-Artists mb-80">
+                    <img th:src="@{/img/bg-img/6.jpg}" width="300" height="300" style="border: 5px Solid black;">&emsp;&emsp;
+                    <div class="Artist-info">
+                        <p style="padding: 10px; background: White; border: 2px Solid black; text-align: center;">Taylor Swift&emsp;&emsp;Albums:25</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Featured Artist -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="Most-Popular-Artist mb-80">
+                    <img th:src="@{/img/bg-img/7.jpg}" width="300" height="300" style="border: 5px Solid black;">&emsp;&emsp;
+                    <p style="padding: 10px; background: White; border: 2px Solid black; text-align: center;">Dragonforce&emsp;&emsp;Albums:22</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- ***** Featured Artist End ***** -->
+
 <footer th:insert="fragments/navigation :: footer"></footer>
 <hr>
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>

@@ -3,6 +3,17 @@ body {
 }
 
 
+h5 {
+    color: darkblue;
+    text-align: center;
+    align-content: center;
+}
+
+div {
+    width: 300px;
+    margin: auto;
+}
+
 h1 {
 
     color: darkblue;

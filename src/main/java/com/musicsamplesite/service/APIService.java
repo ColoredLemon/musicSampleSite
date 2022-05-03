@@ -1,6 +1,5 @@
 package com.musicsamplesite.service;
 
-import com.musicsamplesite.model.*;
 import com.musicsamplesite.model.Album;
 import com.musicsamplesite.model.Albums;
 import com.musicsamplesite.model.Artists;
@@ -10,8 +9,6 @@ import java.util.List;
 
 /**
  * The interface Search service.
- *
- * @author Yuepeng
  */
 public interface APIService {
 

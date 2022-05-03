@@ -1,0 +1,99 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="/static/style/main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/static/style/owl.carousel.min.css}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/static/style/bootstrap.min.css}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/style/style.css"/>
+    <link rel="stylesheet" href="/static/style/style2.css"/>
+    <link rel="stylesheet" href="/static/style/style3.scss"/>
+    <link rel="stylesheet" href="/static/style/style4.css"/>
+
+    <style th:inline="text">
+        body{
+            background: url([[@{/img/bg-img/20.jpeg}]])
+            no-repeat center center fixed;
+            background-size: 100%;
+            width:  auto;
+            background-position: center;
+        }
+    </style>
+
+    <title>Title</title>
+</head>
+
+<!-- Nav Links -->
+<nav th:fragment="nav-all-links" class="navbar navbar-expand-sm navbar-dark bg-dark" style="min-width: 100%;">
+    <a href="#" class="navbar-brand text-white"><strong>Music Sharing Website</strong></a>
+    <div class="navbar-collapse collapse show">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}">Search<span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="">User Library</a>
+            </li>
+        </ul>
+        <span class="float-right"><a class="nav-link text-white" target="_blank" th:href="@{/Login}">Login/Signup</a></span>
+    </div>
+</nav>
+<body>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div
+                class=" col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1>User Login</h1>
+            <div class="card-body">
+                <div id="message">
+                    <!-- unless means "else" condition from if...Else statement -->
+                    <div th:unless="${error == null}" th:text="${error}" class="alert alert-danger"></div>
+                    <div th:unless="${info == null}" th:text="${info}" class="alert alert-info"></div>
+                </div>
+                <!-- post mapping as /students -->
+                <form th:action="@{/userlogin}" th:object="${user}" method="post">
+                    <div class="form-group">
+                        <!-- "*{....}" to bind the input to filed -->
+                        <label>Name</label> <input type="text" name="name"
+                                                   class="form-control" th:field="*{name}"
+                                                   placeholder="Enter Your User Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label> <input type="password" name="password"
+                                                       class="form-control" th:field="*{password}"
+                                                       placeholder="Please Enter Your Password" />
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                    </div>
+                    <div>
+                        Not Registered Yet? <a th:href="@{/userregistration}">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer th:fragment="footer" th:align="center">
+    <span class="text-secondary" style="margin-bottom: 2vh;">This is our footer.</span>
+</footer>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

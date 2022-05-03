@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @param <T> Wrapper for application object to enable mapping json to objects
  *            by Jackson ObjectMapper -> Ex: Data[{k:key,v:value}] <- Objects Wrapped in Data[] field
- * @author Yuepeng
+ *
  */
 public class Data<T> {
 

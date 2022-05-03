@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css} "/>
     <link rel="stylesheet" href="/style/main.css"/>
+
+    <style th:inline="text">
+        body{
+            background: url([[@{/img/bg-img/20.jpeg}]])
+            no-repeat center center fixed;
+            background-size: 100%;
+            width:  auto;
+            background-position: center;
+        }
+    </style>
+
 </head>
 <body>
 
 
 <h2 th:fragment="h2-banner" th:align="center" class="header-panel">
-    <h1 style="font-size: 115%">Made Possible By: <img th:src="@{/img/deez_icon.png}" class="img-fluid"
-                                                       src="/img/deez_icon.png"
-                                                       style="max-width: 7.5%" alt="Media Resource"/>'s Open-Access API
-    </h1>
+    <h1 style="font-size: 115%"></h1>
     <p th:align="center"><strong>
         Use the box below to search your favorite band or recording artist.<br>
     </strong>
@@ -22,38 +30,30 @@
 
 <!-- Nav Links -->
 <nav th:fragment="nav-all-links" class="navbar navbar-expand-sm navbar-dark bg-dark" style="min-width: 100%;">
-    <a href="#" class="navbar-brand text-white"><strong>Discography Web App</strong></a>
+    <a href="#" class="navbar-brand text-white"><strong>Music Sharing Website</strong></a>
     <div class="navbar-collapse collapse show">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" th:href="@{/}">Search<span class="sr-only">(current)</span>
+                <a class="nav-link" th:href="@{/}">Home<span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" target="_blank" th:href="@{/signUp}">View
-                    Code</a>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/Browse}">Browse</a>
             </li>
         </ul>
-        <span class="float-right"><a class="nav-link text-white" target="_blank" href="https://www.github.com/HarryDulaney">Created
-            By Harry Dulaney</a></span>
+        <li class="nav-item active">
+        <span class="float-right"><a class="nav-link text-white" th:href="@{/Login?error}">Signout/Login</a></span>
+        </li>
     </div>
 </nav>
 <h2 th:fragment="h2-banner-2" th:align="center" class="header-panel">
-    <h1 th:align="center" style="font-size: 115%;">Made Possible By: <img class="img-fluid"
-                                                                          src="/img/deez_icon.png"
-                                                                          th:src="@{/img/deez_icon.png}"
-                                                                          style="max-width: 7.5%" alt="Media Resource"/>'s
-        Open-Access API</h1>
+    <h1> "Artist Searched Below" </h1>
     <p th:align="center"><strong>
-        Use the links below to explore other content on the artist<!-- or find new music to listen to by clicking on Similar
-        Artists --></strong><br></p>
+        Use the links below to explore other content on the artist
+        </strong><br></p>
 </h2>
 <h2 th:fragment="h2-banner-3" th:align="center" class="header-panel">
-    <h1 th:align="center" style="font-size: 115%;">Made Possible By: <img class="img-fluid"
-                                                                          src="/img/deez_icon.png"
-                                                                          th:src="@{/img/deez_icon.png}"
-                                                                          style="max-width: 7.5%" alt="Media Resource"/>'s
-        Open-Access API</h1>
+        <h1>Open-Access API</h1>
     <p th:align="center"><strong>
         New Features coming soon!!</strong><br></p>
 </h2>
@@ -61,11 +61,11 @@
 <!-- Artist links for New Search and Albums with all Albums Disabled -->
 <div th:fragment="links-bar-albums" class="button-bar" style="margin-top: 1vh;margin-bottom: 2vh;">
     <h6 class="text-info"> - Artist Content Navigation -</h6>
-    <a th:href="@{/}">
+    <a th:href="@{/Browse}">
         <button class="btn btn-outline-primary mb-auto">New Search</button>
     </a>
     <a th:href="@{/albums}">
-        <button class="btn btn-outline-primary mb-auto" disabled>Albums</button>
+        <button class="btn mb-auto" disabled></button>
     </a>
 </div>
 
@@ -73,33 +73,27 @@
 <div th:fragment="links-bar-search-disabled" class="button-bar" style="margin-top: 1vh;margin-bottom: 2vh;">
     <h6 class="text-info"> Artist Content Navigation </h6>
     <a th:href="@{/}">
-        <button class="btn btn-outline-primary mb-auto">New Search</button>
+        <button class="btn mb-auto">New Search</button>
     </a>
     <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Albums</button>
+        <button class="btn mb-auto" disabled></button>
     </a>
     <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Tracks</button>
+        <button class="btn mb-auto" disabled></button>
     </a>
     <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Similar Artists</button>
+        <button class="btn mb-auto" disabled></button>
     </a>
 </div>
 
 <!-- Artist Links with all links Active -->
 <div th:fragment="links-bar-active-all" class="button-bar" style="margin-top: 1vh;margin-bottom: 2vh;">
     <h6 class="text-info"> Artist Content Navigation </h6>
-    <a th:href="@{/}">
+    <a th:href="@{/Browse}">
         <button class="btn btn-outline-primary mb-auto">New Search</button>
     </a>
     <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Albums</button>
-    </a>
-    <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Tracks</button>
-    </a>
-    <a href="#">
-        <button class="btn btn-outline-primary mb-auto" disabled>Similar Artists</button>
+        <button class="btn mb-auto" disabled></button>
     </a>
 </div>
 
@@ -109,8 +103,7 @@
 
 <footer th:fragment="footer" th:align="center">
     <hr>
-    <span class="text-secondary" style="margin-bottom: 2vh;">ICS499 Group Project V2</span>
-        <button class="btn btn-outline-dark">Music Sample Site</button>
+    <span class="text-secondary" style="margin-bottom: 2vh;">Please note due to restrictions of Copyright and possible legal actions that all songs are only clipped to 30 seconds. We hope you Understand. Thank You..</span>
     </a>
 </footer>
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>

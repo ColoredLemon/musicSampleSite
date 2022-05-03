@@ -1,7 +1,7 @@
 package com.musicsamplesite.utils;
 
 
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,8 +11,6 @@ import java.io.IOException;
 
 /**
  * The type Simh rest template.
- *
- * @author Yuepeng
  */
 @Component
 public class SIMHRestTemplate {
